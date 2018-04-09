@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="div-top-pag">
+        <h1 class="tittle-pag">Código Expreso</h1>
+    </div>
+
+    <div class="div-menu">
+        @Html.Action("Menu","Home")
+    </div>
+
+    <div class="div-body">
+        @RenderBody()
+    </div>
+    
+    <div class="div-botton-pag">
+        <span>Visite a nossa página </span><a href="http://portal.lsbd.ufc.br/PortalManager/login/auth" target="_blank">lsbd</a>
+    </div>
+    
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
