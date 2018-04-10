@@ -8,12 +8,12 @@
 <fieldset>
     <legend>Aluno cadastrado:</legend>
     <div>
-        <strong>Id Aluno: </strong>@Model.idAluno
+        <strong>@Html.LabelFor(model => model.idAluno): </strong>@Html.DisplayFor(model => model.idAluno)
     </div>
     <div>
-        <strong>Nome: </strong>@Model.nome
+        <strong>@Html.LabelFor(model => model.nome): </strong>@Html.DisplayFor(model => model.nome)
     </div>
     <div>
-        <strong>Email: </strong>@Model.email
+        <strong>@Html.LabelFor(model => model.email): </strong>@Html.DisplayFor(model => model.email)
     </div>
 </fieldset>

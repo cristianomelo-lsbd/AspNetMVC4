@@ -28,10 +28,10 @@ textarea {
     background:#212121;
 }
 
-.div-botton-pag{
-    margin-top:5px;
-    padding:5px;
-    background:#E0E0E0;
+.div-botton-pag {
+    margin-top: 5px;
+    padding: 5px;
+    background: #9E9E9E;
 }
 
 .div-body {
@@ -46,7 +46,7 @@ textarea {
 
 .div-menu{
     padding:5px;
-    background:#ddd;
+    background:#9E9E9E;
 }
 
 a {
@@ -55,5 +55,5 @@ a {
 }
 
 a:hover{
-    color:#81D4FA;
+    color:#01579B;
 }

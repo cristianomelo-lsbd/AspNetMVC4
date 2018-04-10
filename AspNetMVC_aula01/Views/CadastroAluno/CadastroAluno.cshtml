@@ -18,34 +18,52 @@
 @using (Html.BeginForm("ExibeCadastroAlunoTipado", "CadastroAluno", null, FormMethod.Post))
 {
 
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Cadastro Aluno</legend>
 
         <div>
-            @Html.LabelFor(model => Model.idAluno)
+            <div class="editor-label">
+                @Html.LabelFor(model => Model.idAluno)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => Model.idAluno)
+            </div>
         </div>
-        <div>
-            @Html.TextBoxFor(model => Model.idAluno)
-        </div>
+        @Html.ValidationMessageFor(model => Model.idAluno)
 
         <div>
-            @Html.LabelFor(model => Model.nome)
+            <div class="editor-label">
+                @Html.LabelFor(model => Model.nome)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => Model.nome)
+            </div>
         </div>
-        <div>
-            @Html.TextBoxFor(model => Model.nome)
-        </div>
+        @Html.ValidationMessageFor(model => Model.nome)
 
         <div>
-            @Html.LabelFor(model => Model.email)
+            <div class="editor-label">
+                @Html.LabelFor(model => Model.email)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => Model.email)
+            </div>
         </div>
-        <div>
-            @Html.TextBoxFor(model => Model.email)
-        </div>
+        @Html.ValidationMessageFor(model => Model.email)
+
         <br />
         <div>
             <input type="submit" value="salvar" />
         </div>
 
     </fieldset>
+
+    // It serves to run jqueryval on BundleConfig.cs (~/App_Start) to validate 
+    @section scripts{
+        @Scripts.Render("~/bundles/jqueryval")    
+        }
+
 }
