@@ -15,7 +15,8 @@ namespace AspNetMVC_aula01.Controllers
             return View(aluno);
         }
 
-        [HttpPost]
+        // Form colletion is one way to pass a value from a VIEW to the CONTROLLER
+        [HttpPost] // this method collects the data from the browser. it MUST BE declared
         public ActionResult ExibeCadastroAluno(FormCollection form)
         {
             ViewBag.idAluno = form["idAluno"];

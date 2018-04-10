@@ -1,40 +1,51 @@
-﻿@model AspNetMVC_aula01.Models.ModAluno
+﻿@* Using RAZEL model to improve the sintax *@
 
-@{ 
-    ViewBag.Title = "Cadastro de Aluno";
+@* It will refers to model class and its attributes*@
+@model AspNetMVC_aula01.Models.ModAluno
+
+@{
+    ViewBag.Title = "Cadastro de Aluno"; @* it shows the title on browser *@
 }
 
 <br />
 
-@using (Html.BeginForm("ExibeCadastroAluno","CadastroAluno",null, FormMethod.Post))
+@* Writes an opening <form> tag to the response and sets the action tag to the specified controller and action *@
+
+@*  PARAMETERS FROM BEGINFORM
+    
+    BeginForm( ActionName, ControllerName, FormMethod )
+*@
+@using (Html.BeginForm("ExibeCadastroAluno", "CadastroAluno", null, FormMethod.Post))
 {
-<fieldset>
-    <legend>Cadastro Aluno</legend>
 
-    <div>
-        @Html.LabelFor(model => Model.idAluno)
-    </div>
-    <div>
-        @Html.TextBoxFor(model => Model.idAluno)
-    </div>
 
-    <div>
-        @Html.LabelFor(model => Model.nome)
-    </div>
-    <div>
-        @Html.TextBoxFor(model => Model.nome)
-    </div>
-   
-    <div>
-        @Html.LabelFor(model => Model.email)
-    </div>
-    <div>
-        @Html.TextBoxFor(model => Model.email)
-    </div>
-    <br />
-    <div>
-        <input type="submit" value="salvar" />
-    </div>
+    <fieldset>
+        <legend>Cadastro Aluno</legend>
 
-</fieldset>
+        <div>
+            @Html.LabelFor(model => Model.idAluno)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => Model.idAluno)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => Model.nome)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => Model.nome)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => Model.email)
+        </div>
+        <div>
+            @Html.TextBoxFor(model => Model.email)
+        </div>
+        <br />
+        <div>
+            <input type="submit" value="salvar" />
+        </div>
+
+    </fieldset>
 }
