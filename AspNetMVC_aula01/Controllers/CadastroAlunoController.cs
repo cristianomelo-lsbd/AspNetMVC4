@@ -19,12 +19,20 @@ namespace AspNetMVC_aula01.Controllers
         [HttpPost] // this method collects the data from the browser. it MUST BE declared
         public ActionResult ExibeCadastroAluno(FormCollection form)
         {
+            // ViewBag receives attributes by HttpPost and save them to uses on ExibeCadastroAluno.cshtml
             ViewBag.idAluno = form["idAluno"];
             ViewBag.nome = form["nome"];
             ViewBag.email = form["email"];
 
             return View();
         }
-        
+
+        // Form colletion is one way to pass a value from a VIEW to the CONTROLLER
+        [HttpPost] // this method collects the data from the browser. it MUST BE declared
+        public ActionResult ExibeCadastroAlunoTipado( ModAluno aluno )
+        {
+            return View(aluno);
+        }
+
     }
 }

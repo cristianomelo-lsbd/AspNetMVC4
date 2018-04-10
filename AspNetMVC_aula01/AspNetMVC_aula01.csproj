@@ -191,6 +191,7 @@
     <Content Include="Views\Home\Menu.cshtml" />
     <Content Include="Views\CadastroAluno\CadastroAluno.cshtml" />
     <Content Include="Views\CadastroAluno\ExibeCadastroAluno.cshtml" />
+    <Content Include="Views\CadastroAluno\ExibeCadastroAlunoTipado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

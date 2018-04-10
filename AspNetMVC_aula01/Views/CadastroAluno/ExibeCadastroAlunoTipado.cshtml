@@ -1,0 +1,19 @@
+﻿@model AspNetMVC_aula01.Models.ModAluno
+
+@{
+    ViewBag.Title = "Exibe Cadastro de Aluno Tipado";
+}
+
+<br />
+<fieldset>
+    <legend>Aluno cadastrado:</legend>
+    <div>
+        <strong>Id Aluno: </strong>@Model.idAluno
+    </div>
+    <div>
+        <strong>Nome: </strong>@Model.nome
+    </div>
+    <div>
+        <strong>Email: </strong>@Model.email
+    </div>
+</fieldset>
