@@ -148,7 +148,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ModAluno.cs" />
+    <Compile Include="Models\Validations\CustomModelBinder.cs" />
     <Compile Include="Models\Validations\DataBrasilAttribute.cs" />
+    <Compile Include="Models\Validations\NumeroBrasilAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

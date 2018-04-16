@@ -17,6 +17,16 @@ namespace AspNetMVC_aula01
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            // these methods below serves to use another function about DOUBLE (instead of the standard)
+            // aula 6 from tutorial
+            // replace the standard for the implemented:
+            ModelBinders.Binders.Add(typeof(double), new DoubleModelBinder());
+            ModelBinders.Binders.Add(typeof(double?), new DoubleModelBinder());
+            ModelBinders.Binders.Add(typeof(int), new Int32ModelBinder());
+            ModelBinders.Binders.Add(typeof(int?), new Int32ModelBinder());
+            ModelBinders.Binders.Add(typeof(decimal), new DecimalModelBinder());
+            ModelBinders.Binders.Add(typeof(decimal?), new DecimalModelBinder());
+
             // includes two helpers methods 
             // one for client-side validation and another obstrusive validation javascript
             HtmlHelper.ClientValidationEnabled = true;

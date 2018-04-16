@@ -21,58 +21,68 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
-    <fieldset>
-        <legend>Cadastro Aluno</legend>
+<fieldset>
+    <legend>Cadastro Aluno</legend>
 
-        <div>
-            <div class="editor-label">
-                @Html.LabelFor(model => Model.idAluno)
-            </div>
-            <div class="editor-field">
-                @Html.TextBoxFor(model => Model.idAluno)
-            </div>
+    <div>
+        <div class="editor-label">
+            @Html.LabelFor(model => Model.idAluno)
         </div>
-        @Html.ValidationMessageFor(model => Model.idAluno)
-
-        <div>
-            <div class="editor-label">
-                @Html.LabelFor(model => Model.nome)
-            </div>
-            <div class="editor-field">
-                @Html.TextBoxFor(model => Model.nome)
-            </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => Model.idAluno, new { Class = "integer" })
         </div>
-        @Html.ValidationMessageFor(model => Model.nome)
+    </div>
+    @Html.ValidationMessageFor(model => Model.idAluno)
 
-        <div>
-            <div class="editor-label">
-                @Html.LabelFor(model => Model.email)
-            </div>
-            <div class="editor-field">
-                @Html.TextBoxFor(model => Model.email)
-            </div>
+    <div>
+        <div class="editor-label">
+            @Html.LabelFor(model => Model.nome)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => Model.nome)
+        </div>
+    </div>
+    @Html.ValidationMessageFor(model => Model.nome)
+
+    <div>
+        <div class="editor-label">
+            @Html.LabelFor(model => Model.email)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => Model.email)
+        </div>
+    </div>
+    <div>
+        <div class="editor-label">
+            @Html.LabelFor(model => Model.DtCadastro)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => Model.DtCadastro, new { Class = "date" })
         </div>
         @Html.ValidationMessageFor(model => Model.DtCadastro)
+    </div>
 
-        <div>
-            <div class="editor-label">
-                @Html.LabelFor(model => Model.DtCadastro)
-            </div>
-            <div class="editor-field">
-                @Html.TextBoxFor(model => Model.DtCadastro, new { Class = "date" })
-            </div>
+    <div>
+        <div class="editor-label">
+            @Html.LabelFor(model => Model.ValorCurso)
         </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => Model.ValorCurso, new { Class = "money2" })
+        </div>
+
+        @Html.ValidationMessageFor(model => Model.ValorCurso)
+    </div>
 
         <br />
         <div>
             <input type="submit" value="salvar" />
         </div>
 
-    </fieldset>
+</fieldset>
 
     // It serves to run jqueryval on BundleConfig.cs (~/App_Start) to validate
     @section scripts{
-        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/jqueryval") 
         @Scripts.Render("~/bundles/Mascaras")
     }
 
