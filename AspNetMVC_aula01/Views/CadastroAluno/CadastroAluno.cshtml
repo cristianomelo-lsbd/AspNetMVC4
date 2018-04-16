@@ -12,7 +12,7 @@
 @* Writes an opening <form> tag to the response and sets the action tag to the specified controller and action *@
 
 @*  PARAMETERS FROM BEGINFORM
-    
+
     BeginForm( ActionName, ControllerName, FormMethod )
 *@
 @using (Html.BeginForm("ExibeCadastroAlunoTipado", "CadastroAluno", null, FormMethod.Post))
@@ -52,7 +52,16 @@
                 @Html.TextBoxFor(model => Model.email)
             </div>
         </div>
-        @Html.ValidationMessageFor(model => Model.email)
+        @Html.ValidationMessageFor(model => Model.DtCadastro)
+
+        <div>
+            <div class="editor-label">
+                @Html.LabelFor(model => Model.DtCadastro)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => Model.DtCadastro, new { Class = "date" })
+            </div>
+        </div>
 
         <br />
         <div>
@@ -61,9 +70,10 @@
 
     </fieldset>
 
-    // It serves to run jqueryval on BundleConfig.cs (~/App_Start) to validate 
+    // It serves to run jqueryval on BundleConfig.cs (~/App_Start) to validate
     @section scripts{
-        @Scripts.Render("~/bundles/jqueryval")    
-        }
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/Mascaras")
+    }
 
 }
